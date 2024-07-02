@@ -2,6 +2,7 @@ import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Home, Info, FileText, Mail } from "lucide-react";
+import AddPost from "./pages/AddPost.jsx";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Layout from "./layouts/navbar";
 import Index from "./pages/Index.jsx";
@@ -28,6 +29,11 @@ export const navItems = [
     icon: <FileText className="h-4 w-4" />,
   },
   {
+    title: "Add Post",
+    to: "/add-post",
+    icon: <FileText className="h-4 w-4" />,
+  },
+  {
     title: "Contact",
     to: "/contact",
     icon: <Mail className="h-4 w-4" />,
@@ -45,6 +51,7 @@ const App = () => {
               <Route index element={<Index />} />
               <Route path="about" element={<About />} />
               <Route path="blog" element={<Blog />} />
+              <Route path="add-post" element={<AddPost />} />
               <Route path="contact" element={<Contact />} />
             </Route>
           </Routes>
